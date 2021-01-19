@@ -10,11 +10,11 @@ function roughScale(x, base) {
   }
   return parsed
 }
-
-router.get('/poke',(req, res)=> {
-  const POKE_API_ROOT = "https://acs-web-final-project.herokuapp.com/api";
-
-    const pokeInstance = axios.create({
+/*
+router.get('/poke',async (req, res)=> {
+  //const POKE_API_ROOT = "https://acs-web-final-project.herokuapp.com/api";
+  const POKE_API_ROOT = "http://localhost:5000";
+    const pokeInstance = await axios.create({
     baseURL: POKE_API_ROOT
     })
 
@@ -27,7 +27,7 @@ router.get('/poke',(req, res)=> {
     } ), 1000 * 3)
     res.status(200).send({message: 'success poking'});
 }) 
-
+*/
 
 // nothing needed to do here, just getNumber to set a number.
 router.post('/start', (_, res) => {

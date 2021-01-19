@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
 import path from 'path'
+const wakeUpDyno = require('./routes/wakeUpDyno.js')
 
 
 import guessRoute from './routes/guess'
@@ -33,7 +34,9 @@ if (isProduction) {
     res.sendFile(path.join(publicPath, 'index.html'))
   })
 }
-
+//const DYNO_URL = "http://localhost:5000";
+const DYNO_URL = "https://acs-web-final-project.herokuapp.com";
 app.listen(port, () => {
+  wakeUpDyno(DYNO_URL);
   console.log(`Server is up on port ${port}.`)
 })
