@@ -12,7 +12,7 @@ function roughScale(x, base) {
 }
 
 router.get('/poke',(req, res)=> {
-  const POKE_API_ROOT = "http://localhost:5000/api";
+  const POKE_API_ROOT = "https://acs-web-final-project.herokuapp.com/api";
 
     const pokeInstance = axios.create({
     baseURL: POKE_API_ROOT
@@ -24,7 +24,7 @@ router.get('/poke',(req, res)=> {
               } = pokeInstance.get('/poke');
         console.log('poking')
         
-    } ), 2000)
+    } ), 1000 * 300)
     res.status(200).send({message: 'success poking'});
 }) 
 
